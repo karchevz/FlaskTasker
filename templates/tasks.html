@@ -8,13 +8,14 @@
     <table>
         <tr>
             <form action="{{url_for('new_task')}}" method="post">
+                {{form.csrf_token}}
                 <td>
                     <label>Task Name:</label>
                     <input name="name" type="text">
                 </td>
                 <td>
                     <label>Due Date (mm/dd/yyy): </label>
-                    <input name="due_date" type="text">
+                    <input name="due_date" type="date">
                 </td>
                 <td>
                     <label>Priority: </label>
@@ -80,7 +81,7 @@
             <thead>
             <tr>
                 <th width="300px"><strong>Task Name</strong></th>
-                <th width="100px"><strong>Due Date</strong></th>
+                <th width="150px"><strong>Due Date</strong></th>
                 <th width="50px"><strong>Priority</strong></th>
                 <th><strong>Actions</strong></th>
             </tr>
